@@ -1,0 +1,12 @@
+six==1.16.0
+loguru==0.7.2
+fastapi==0.115.0
+uvicorn==0.31.0
+mongoengine==0.29.1
+python-dotenv==1.0.1
+
+requests
+httpx
+bs4
+requests-html
+lxml_html_clean
