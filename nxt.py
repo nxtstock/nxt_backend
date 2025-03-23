@@ -1,7 +1,5 @@
 from uvicorn import run
 from fastapi import FastAPI
-from startup.routes import initialize_routes
-from modules.database import connect_to_mongo
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -14,9 +12,9 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-connect_to_mongo()
-initialize_routes(app)
-
+@app.get("/")
+def read_root():
+    return {"message": "Hello, World!"}
 
 if __name__ == "__main__":
     run(
